@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#game {
+  display: flex;
+  height: 600px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.game-div {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+#margin-left {
+  background-color: red;
+  width: 20%;
+}
+
+#lake {
+  background-color: blue;
+  flex-direction: column-reverse;
+  align-content: flex-start;
+  width: 60%;
+}
+
+#margin-right {
+  background-color: yellow;
+  width: 20%;
+}
+
+#lake > .character {
+  width: 20%;
+}
+
+.character {
+  height: 30%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50%;
+  opacity: 0.9;
+}
+
+.character:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+#cabbage {
+  background-size: 20%;
+}
