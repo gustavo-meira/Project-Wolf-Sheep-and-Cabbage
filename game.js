@@ -8,7 +8,6 @@ export default function createGame() {
         characterObject.onBoat = true;
         state.boat.empty = false;
         lakeDiv.appendChild(characterObject.characterDiv);
-        console.log(characterObject);
       }
     }
   }
@@ -17,7 +16,7 @@ export default function createGame() {
     setTimeout(() => {
       alert('Parabéns, você conseguiu vencer o jogo!');
       resetGame();
-    }, 200);
+    }, 1);
   }
 
   function checkGameWin() {
@@ -58,17 +57,19 @@ export default function createGame() {
   }
 
   function checkGameLose() {
-    if (state.wolf.margin === state.sheep.margin) {
-      if (state.wolf.onBoat) return;
-      if (state.sheep.onBoat) return;
-      resetGame();
-      return alert('O lobo e a ovelha não podem ficar sozinhos!');
-    } else if (state.sheep.margin === state.cabbage.margin) {
-      if (state.cabbage.onBoat) return;
-      if (state.sheep.onBoat) return;
-      resetGame();
-      return alert('A ovelha e o repolho não podem ficar sozinhos!');
-    }
+    setTimeout(() => {
+      if (state.wolf.margin === state.sheep.margin) {
+        if (state.wolf.onBoat) return;
+        if (state.sheep.onBoat) return;
+        resetGame();
+        return alert('O lobo e a ovelha não podem ficar sozinhos!');
+      } else if (state.sheep.margin === state.cabbage.margin) {
+        if (state.cabbage.onBoat) return;
+        if (state.sheep.onBoat) return;
+        resetGame();
+        return alert('A ovelha e o repolho não podem ficar sozinhos!');
+      }
+    }, 1);
   }
 
   function checkMovementBoat() {
